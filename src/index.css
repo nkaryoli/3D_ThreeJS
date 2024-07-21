@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --blue-rgb: 237 245 255;
+  --green-rgb: 125 161 35;
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+}
+
+@layer utilities {
+  .blue-gradient_text {
+    @apply bg-gradient-to-r from-[#00c6ff] to-[#0072ff] bg-clip-text text-transparent;
+  }
+
+  .header {
+    @apply flex justify-between items-center sm:px-10 px-8 py-8 max-w-5xl mx-auto absolute top-0 bg-transparent z-10 right-0 left-0;
+  }
+}

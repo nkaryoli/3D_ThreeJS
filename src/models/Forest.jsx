@@ -9,7 +9,7 @@ Title: [Strig & Kabu] Mole Decor
 import { useRef, useEffect } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
-import { a } from '@react-spring/three';
+import { animated } from '@react-spring/three';
 
 import forestScene from '../assets/3d/forest.glb';
 
@@ -128,67 +128,7 @@ const Forest = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
     }, [gl, handlePointerDown, handlePointerUp, handlePointerMove]);
 
     return (
-        <a.group ref={forestRef} {...props} >
-            <mesh
-                geometry={nodes.SM_Decoration_Brick01_M_BrickLoose_0.geometry}
-                material={materials.M_BrickLoose}
-            />
-            <mesh
-                geometry={nodes.SM_Decoration_Brick02_M_BrickLoose_0.geometry}
-                material={materials.M_BrickLoose}
-            />
-            <mesh
-                geometry={nodes.SM_Decoration_Brick03_M_BrickPile_0.geometry}
-                material={materials.M_BrickPile}
-            />
-            <mesh
-                geometry={nodes.SM_Decoration_BrickBlock_M_BrickChimney_0.geometry}
-                material={materials.M_BrickChimney}
-            />
-            <mesh
-                geometry={nodes.SM_Decoration_BrickWall01_M_BrickWall_0.geometry}
-                material={materials.M_BrickWall}
-            />
-            <mesh
-                geometry={nodes.SM_Decoration_BrickWall02_M_BrickWall_0.geometry}
-                material={materials.M_BrickWall}
-            />
-            <mesh
-                geometry={nodes.SM_Decoration_BrickWall03_M_BrickWall_0.geometry}
-                material={materials.M_BrickWall}
-            />
-            <mesh
-                geometry={nodes.SM_Decoration_BrickBlock1_M_BrickChimney_0.geometry}
-                material={materials.M_BrickChimney}
-            />
-            <mesh
-                geometry={nodes.SM_Decoration_BrickBlock2_M_BrickChimney_0.geometry}
-                material={materials.M_BrickChimney}
-            />
-            <mesh
-                geometry={nodes.SM_Decoration_Brick04_M_BrickLoose_0.geometry}
-                material={materials.M_BrickLoose}
-            />
-            <mesh
-                geometry={nodes.SM_Decoration_Brick05_M_BrickLoose_0.geometry}
-                material={materials.M_BrickLoose}
-            />
-            <mesh
-                geometry={nodes.SM_Decoration_Brick06_M_BrickLoose_0.geometry}
-                material={materials.M_BrickLoose}
-            />
-            <mesh
-                geometry={nodes.SM_Decoration_Chimney01_M_Chimney_0.geometry}
-                material={materials.M_Chimney}
-            />
-            <mesh
-                geometry={nodes.SM_Decoration_Chimney02_M_Chimney_0.geometry}
-                material={materials.M_Chimney}
-            />
-            <mesh
-                geometry={nodes.SM_Decoration_Chimney03_M_Chimney_0.geometry}
-                material={materials.M_Chimney}
-            />
+        <animated.group ref={forestRef} {...props}>
             <mesh
                 geometry={nodes.SM_Decoration_MiningLamp01_M_LanternGlass_0.geometry}
                 material={materials.M_LanternGlass}
@@ -197,6 +137,7 @@ const Forest = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
                 geometry={nodes.SM_Decoration_MiningLamp01_M_Lantern_0.geometry}
                 material={materials.M_Lantern}
             />
+            
             <mesh
                 geometry={nodes.SM_Decoration_Pickaxe_M_Pickaxe_0.geometry}
                 material={materials.M_Pickaxe}
@@ -745,7 +686,7 @@ const Forest = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
                 geometry={nodes.SM_Pebbles_03_M_Pebbles_0.geometry}
                 material={materials.M_Pebbles}
             />
-            <mesh
+            {/* <mesh
                 geometry={nodes.PS_SmokeCloud_001_M_SmokeCloud_0.geometry}
                 material={materials.M_SmokeCloud}
             />
@@ -796,7 +737,7 @@ const Forest = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
             <mesh
                 geometry={nodes.PS_SmokeCloud_0013_M_SmokeCloud_0.geometry}
                 material={materials.M_SmokeCloud}
-            />
+            /> */}
             <mesh
                 geometry={nodes.PS_Firefly_001_M_Firefly_0.geometry}
                 material={materials.M_Firefly}
@@ -885,7 +826,7 @@ const Forest = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
                 geometry={nodes.PS_Firefly_0022_M_Firefly_0.geometry}
                 material={materials.M_Firefly}
             />
-        </a.group>
+        </animated.group>
     )
 }
 
